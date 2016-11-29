@@ -1,0 +1,28 @@
+<div class="section main">
+    <md-content class="md-padding dogs-container" layout="row" ng-class="{'closed': actually.closed}">
+        <md-card class="dog-card" flex-xs flex-gt-xs="10" ng-repeat="pet in list.pets">
+            <img ng-src="http://t2.gstatic.com/images?q=tbn:ANd9GcRq8GuoiImMqdVk49O-F8aaR7U6TZnFSaMvPRSY1FObQSvPhEkcer2y2Dg"
+                 class="md-card-image" alt="Dog">
+            <md-card-title>
+                <md-card-title-text>{{pet.name}}</md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                {{pet.status}}
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="center">
+                <md-button aria-label="Delete" ng-click="list.remove(pet, $event)">
+                    Delete
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </md-content>
+
+    <md-button class="md-fab md-fab-bottom-right" aria-label="Add a pet" ui-sref="pets.add">
+        <md-tooltip>
+            Add a pet
+        </md-tooltip>
+        <md-icon class="mdi mdi-plus"></md-icon>
+    </md-button>
+</div>
+
+

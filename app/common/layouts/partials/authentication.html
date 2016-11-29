@@ -1,0 +1,64 @@
+<md-dialog aria-label="Authentification">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Authentification</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <md-tabs md-dynamic-height md-border-bottom md-selected="selectedTab">
+                <md-tab label="Connexion">
+                    <md-content class="md-padding">
+                        <md-input-container>
+                            <label>Email</label>
+                            <input ng-model="fields.email" type="email">
+                        </md-input-container>
+                        <md-input-container>
+                            <label>Mot de passe</label>
+                            <input ng-model="fields.password" type="password">
+                        </md-input-container>
+                    </md-content>
+                </md-tab>
+                <md-tab label="Inscription">
+                    <md-content class="md-padding">
+                        <div layout="row">
+                            <md-input-container flex>
+                                <label>Nom d'utilisateur</label>
+                                <input ng-model="fields.username" type="text">
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label>Email</label>
+                                <input ng-model="fields.email" type="email">
+                            </md-input-container>
+                        </div>
+                        <div layout="row">
+                            <md-input-container flex>
+                                <label>Mot de passe</label>
+                                <input ng-model="fields.password" type="password">
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label>Resaisir mot de passe</label>
+                                <input ng-model="fields.confirmPassword" type="password">
+                            </md-input-container>
+                        </div>
+                        <div layout="row">
+                            <md-input-container flex>
+                                <label>Clé bêta</label>
+                                <input ng-model="fields.key" type="password">
+                            </md-input-container>
+                        </div>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="login()" ng-if="selectedTab === 0" class="md-accent">
+                Login
+            </md-button>
+            <md-button ng-click="register()" ng-if="selectedTab === 1" class="md-accent">
+                Inscription
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

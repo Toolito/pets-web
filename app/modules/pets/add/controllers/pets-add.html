@@ -1,0 +1,30 @@
+<form class="section main" name="eventForm">
+    <md-content class="md-padding">
+        <div layout="row" >
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Name</label>
+                <input ng-model="add.pet.name" required md-maxlength="30" name="name" type="text">
+                <div ng-messages="eventForm.name.$error">
+                    <div ng-message="required">This field is required.</div>
+                    <div ng-message="md-maxlength">This field is limited to 30 characters max.</div>
+                </div>
+            </md-input-container>
+            <div flex="5" hide-xs hide-sm> <!-- Spacer //--> </div>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Status</label>
+                <md-select ng-model="user.state">
+                    <md-option ng-repeat="status in add.status" value="{{status}}">
+                        {{status}}
+                    </md-option>
+                </md-select>
+                <div ng-messages="eventForm.status.$error">
+                    <div ng-message="required">This field is required.</div>
+                </div>
+            </md-input-container>
+        </div>
+        <div layout="row" class="md-padding">
+            <md-button ng-disabled="eventForm.$invalid" class="md-raised md-accent" ng-click="add.create()">Create</md-button>
+        </div>
+    </form>
+</div>
+

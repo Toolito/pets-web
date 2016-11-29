@@ -1,0 +1,28 @@
+<!-- begin: sidenav -->
+<md-sidenav ng-if="!$root.fullScreenPage" class="site-sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+    <header class="nav-header">
+        <a ui-sref="home" class="main-logo">
+            <h1 class="site-logotype md-heading">Pets</h1>
+        </a>
+    </header>
+    <md-content role="navigation" flex>
+        <ul class="site-menu">
+            <li class="parent-list-item">
+                <h2 class="menu-heading md-subhead">Navigation</h2>
+                <a ng-class="{'active': $state.includes('pets')}" class="md-button md-ink-ripple" ui-sref="pets"><i class="mdi mdi-film"></i> List</a>
+            </li>
+        </ul>
+        <div class="site-menu-bottom" flex>
+            Version 0.1.0 α
+        </div>
+    </md-content>
+</md-sidenav>
+<!-- end sidenav -->
+
+<!-- begin: HEADER -->
+<div layout="column" role="main" flex>
+    <header ng-include="'/common/layouts/partials/header.html'" ng-if="!$root.fullScreenPage"> </header>
+    <md-content md-scroll-y layout="column" flex ui-view="main"></md-content>
+</div>
+<!-- end: HEADER -->
+
